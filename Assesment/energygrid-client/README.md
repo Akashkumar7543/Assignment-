@@ -18,7 +18,7 @@ No external libraries are used for rate limiting, retries, or cryptographic sign
 ---
 
 ## Project Structure
-
+```
 energygrid-client/
 │
 ├── src/
@@ -29,6 +29,7 @@ energygrid-client/
 │
 ├── package.json
 └── README.md
+```
 
 ## Sample output
 
