@@ -58,38 +58,38 @@ npm start
 
 1. Serial Number Generation
 
-Generates 500 dummy serial numbers: SN-000 to SN-499.
+    Generates 500 dummy serial numbers: SN-000 to SN-499.
 
 2. Batching
 
-Serial numbers are split into batches of 10 to respect the API batch limit.
+    Serial numbers are split into batches of 10 to respect the API batch limit.
 
-Total requests: 50 (500 ÷ 10).
+    Total requests: 50 (500 ÷ 10).
 
 3. Rate Limiting
 
-A strict 1 request per second rate limit is enforced using an explicit sleep(1000) delay.
+    A strict 1 request per second rate limit is enforced using an explicit sleep(1000) delay.
 
-Requests are processed sequentially to avoid HTTP 429 errors.
+    Requests are processed sequentially to avoid HTTP 429 errors.
 
 4. Cryptographic Signature
 
-Each request includes a custom Signature header.
+    Each request includes a custom Signature header.
 
-Signature format:
-    MD5(url + token + timestamp)
+    Signature format:
+       MD5(url + token + timestamp)
 
 5. Error Handling & Retries
 
-If the API returns HTTP 429 or a network error occurs:
+    If the API returns HTTP 429 or a network error occurs:
 
-The request is retried after a 1-second delay.
+    The request is retried after a 1-second delay.
 
-Retries are capped to avoid infinite loops.
+    Retries are capped to avoid infinite loops.
 
 6. Aggregation
 
-All successful responses are combined into a single aggregated result containing data for all 500 devices.
+    All successful responses are combined into a single aggregated result containing data for all 500 devices.
 
 ## Assumptions
 
