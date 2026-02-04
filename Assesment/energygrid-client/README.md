@@ -18,14 +18,38 @@ No external libraries are used for rate limiting, retries, or cryptographic sign
 ---
 
 ## Project Structure
-![alt text](https://file%2B.vscode-resource.vscode-cdn.net/Users/akashkumar/Desktop/Screenshot%202026-02-05%20at%201.06.13%E2%80%AFAM.png?version%3D1770233952170)
+
+energygrid-client/
+│
+├── src/
+│ ├── index.js # Main entry point (business logic)
+│ ├── apiClient.js # API request & retry handling
+│ ├── utils.js # Helper functions (sleep, batching, signature)
+│ └── rateLimiter.js # Manual rate-limiting logic
+│
+├── package.json
+└── README.md
 
 ## Sample output
 
-![alt text](https://file%2B.vscode-resource.vscode-cdn.net/Users/akashkumar/Desktop/Screenshot%202026-02-05%20at%201.05.56%E2%80%AFAM.png?version%3D1770234059193)
+Processing batch 1/50
+Processing batch 2/50
+...
+Processing batch 50/50
+
+All devices fetched Successfully!
+Total devices fetched: 500
+
+Sample device data: {
+  sn: 'SN-000',
+  power: '4.43kw',
+  status: 'Online',
+  last_updated: '2026-02-04T19:34:13.208Z'
+}
 
 ## Run the Client Application
 
+cd energrid-client
 npm install
 npm start
 
