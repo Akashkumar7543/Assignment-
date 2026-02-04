@@ -49,11 +49,11 @@ Sample device data: {
 }
 ```
 ## Run the Client Application
-
+```
 cd energrid-client
 npm install
 npm start
-
+```
 ## Approach & Design
 
 1. Serial Number Generation
