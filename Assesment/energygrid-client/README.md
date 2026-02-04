@@ -32,7 +32,7 @@ energygrid-client/
 ```
 
 ## Sample output
-
+```
 Processing batch 1/50
 Processing batch 2/50
 ...
@@ -47,7 +47,7 @@ Sample device data: {
   status: 'Online',
   last_updated: '2026-02-04T19:34:13.208Z'
 }
-
+```
 ## Run the Client Application
 
 cd energrid-client
